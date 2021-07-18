@@ -213,3 +213,7 @@ func (d *RealDevice) setVersion() error {
 func (d *RealDevice) getVersion() string {
 	return d.version
 }
+
+func (dev *WifiDevice) getVersion() string {
+	return dev.device.version
+}
