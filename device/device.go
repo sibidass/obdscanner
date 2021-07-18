@@ -166,7 +166,7 @@ func (d *RealDevice) Reset() error {
 
 	outputs := result.GetOutput()
 
-	if (strings.HasPrefix(outputs[0], "ELM327")) || (len(outputs) > 1 && strings.HasPrefix(outputs[1], "ELM327")) {
+	if !(strings.HasPrefix(outputs[0], "ELM327")) || (len(outputs) > 1 && strings.HasPrefix(outputs[1], "ELM327")) {
 		output := outputs[0]
 		if len(outputs) > 1 {
 			output += " " + outputs[1]
