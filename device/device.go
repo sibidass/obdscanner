@@ -176,6 +176,8 @@ func (d *RealDevice) Reset() error {
 		return err
 	}
 
+	fmt.Println("Device connected and identified as ELM327")
+
 	err := d.setVersion()
 	if err != nil {
 		d.state = deviceError
@@ -194,6 +196,8 @@ func (d *RealDevice) setAutoProtocol() error {
 	if result.GetOutput()[0] != "OK" {
 		return fmt.Errorf("protocol setup failed. Got response : %q", result.GetOutput()[0])
 	}
+
+	fmt.Println("Device initialized and ready!")
 
 	return nil
 
