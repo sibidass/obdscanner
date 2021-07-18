@@ -214,6 +214,6 @@ func (d *RealDevice) getVersion() string {
 	return d.version
 }
 
-func (dev *WifiDevice) getVersion() string {
-	return dev.device.version
+func (dev *WifiDevice) GetVersion() string {
+	return dev.device.getVersion()
 }
